@@ -1,0 +1,1641 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EcoVanta | Environmental Solutions</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #07120d;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            background: rgba(5, 18, 12, 0.75);
+            backdrop-filter: blur(15px);
+            padding: 18px 0;
+            transition: .4s;
+        }
+
+        .navbar.scrolled {
+            background: rgba(3, 12, 8, .96);
+            box-shadow: 0 10px 40px rgba(0,0,0,.35);
+        }
+
+        .navbar-brand {
+            font-size: 27px;
+            font-weight: 900;
+            color: #8cffc1 !important;
+            letter-spacing: -1px;
+        }
+
+        .navbar-brand span {
+            color: white;
+        }
+
+        .nav-link {
+            color: #d5e8dc !important;
+            margin: 0 8px;
+            font-weight: 500;
+            transition: .3s;
+        }
+
+        .nav-link:hover {
+            color: #79ffad !important;
+        }
+
+        .btn-green {
+            background: #72ffab;
+            color: #06120b;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 800;
+            transition: .3s;
+        }
+
+        .btn-green:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(114,255,171,.25);
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 75% 35%, rgba(66, 255, 148, .18), transparent 28%),
+                radial-gradient(circle at 20% 70%, rgba(28, 160, 90, .15), transparent 30%),
+                #07120d;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            right: -300px;
+            top: 80px;
+            border-radius: 50%;
+            background: rgba(83,255,150,.08);
+            filter: blur(30px);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 5;
+        }
+
+        .badge-green {
+            display: inline-block;
+            padding: 9px 17px;
+            border: 1px solid rgba(123,255,172,.3);
+            background: rgba(123,255,172,.08);
+            color: #85ffb5;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: clamp(50px, 7vw, 95px);
+            line-height: .95;
+            font-weight: 900;
+            letter-spacing: -5px;
+        }
+
+        .hero h1 span {
+            color: #79ffae;
+        }
+
+        .hero p {
+            color: #a9bdb0;
+            max-width: 650px;
+            font-size: 18px;
+            line-height: 1.8;
+            margin: 25px 0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline-green {
+            border: 1px solid rgba(126,255,174,.5);
+            color: #9bffbe;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: .3s;
+        }
+
+        .btn-outline-green:hover {
+            background: #72ffab;
+            color: #07120d;
+        }
+
+        /* Earth visual */
+
+        .earth-wrapper {
+            position: relative;
+            width: 480px;
+            height: 480px;
+            margin: auto;
+        }
+
+        .earth {
+            width: 360px;
+            height: 360px;
+            border-radius: 50%;
+            position: absolute;
+            top: 60px;
+            left: 60px;
+
+            background:
+                radial-gradient(circle at 30% 25%, #9cffbf 0 4%, transparent 5%),
+                radial-gradient(circle at 65% 60%, #2bbf72 0 12%, transparent 13%),
+                radial-gradient(circle at 40% 70%, #1e9958 0 18%, transparent 19%),
+                linear-gradient(130deg, #0b5535, #20c56c);
+
+            box-shadow:
+                0 0 50px rgba(76,255,145,.35),
+                0 0 130px rgba(76,255,145,.18),
+                inset -40px -30px 80px rgba(0,0,0,.35);
+
+            animation: floatEarth 7s ease-in-out infinite;
+        }
+
+        .earth-ring {
+            position: absolute;
+            width: 440px;
+            height: 180px;
+            border: 1px solid rgba(119,255,173,.4);
+            border-radius: 50%;
+            top: 150px;
+            left: 20px;
+            transform: rotate(-18deg);
+            animation: ring 8s linear infinite;
+        }
+
+        .earth-ring2 {
+            position: absolute;
+            width: 420px;
+            height: 160px;
+            border: 1px solid rgba(119,255,173,.18);
+            border-radius: 50%;
+            top: 160px;
+            left: 30px;
+            transform: rotate(25deg);
+        }
+
+        @keyframes floatEarth {
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-18px);
+            }
+        }
+
+        @keyframes ring {
+            from {
+                transform: rotate(-18deg) rotateZ(0);
+            }
+
+            to {
+                transform: rotate(-18deg) rotateZ(360deg);
+            }
+        }
+
+        /* ================= STATS ================= */
+
+        .stats {
+            padding: 30px 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-box {
+            background: rgba(255,255,255,.035);
+            border: 1px solid rgba(255,255,255,.07);
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            transition: .3s;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-8px);
+            border-color: rgba(115,255,170,.3);
+        }
+
+        .stat-box h2 {
+            color: #7dffaf;
+            font-size: 40px;
+            font-weight: 900;
+        }
+
+        .stat-box p {
+            color: #91a99a;
+            margin: 0;
+        }
+
+        /* ================= GENERAL ================= */
+
+        section {
+            padding: 110px 0;
+        }
+
+        .section-label {
+            color: #76ffac;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 800;
+        }
+
+        .section-title {
+            font-size: clamp(38px, 5vw, 62px);
+            font-weight: 900;
+            letter-spacing: -2px;
+            margin-top: 10px;
+        }
+
+        .section-description {
+            color: #91a99a;
+            max-width: 650px;
+            line-height: 1.8;
+            margin-top: 15px;
+        }
+
+        /* ================= SERVICES ================= */
+
+        .service-card {
+            background: linear-gradient(145deg, #0c2116, #08150e);
+            border: 1px solid rgba(255,255,255,.06);
+            border-radius: 25px;
+            padding: 35px;
+            height: 100%;
+            transition: .4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::after {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            right: -80px;
+            bottom: -80px;
+            background: rgba(96,255,155,.1);
+            border-radius: 50%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+            border-color: rgba(115,255,170,.3);
+            box-shadow: 0 25px 60px rgba(0,0,0,.3);
+        }
+
+        .service-icon {
+            width: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(111,255,164,.1);
+            color: #78ffad;
+            border-radius: 18px;
+            font-size: 27px;
+            margin-bottom: 25px;
+        }
+
+        .service-card h4 {
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #91a99a;
+            line-height: 1.7;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about-visual {
+            min-height: 500px;
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(rgba(7,18,13,.15), rgba(7,18,13,.9)),
+                url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1000&q=80")
+                center/cover;
+        }
+
+        .eco-card {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            right: 30px;
+            background: rgba(3,15,9,.8);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 20px;
+            padding: 25px;
+        }
+
+        .progress {
+            height: 8px;
+            background: rgba(255,255,255,.08);
+            margin-top: 10px;
+        }
+
+        .progress-bar {
+            background: #70ffaa;
+        }
+
+        /* ================= PROJECTS ================= */
+
+        .project-card {
+            height: 420px;
+            border-radius: 25px;
+            overflow: hidden;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            transition: .5s;
+        }
+
+        .project-card:hover {
+            transform: scale(1.02);
+        }
+
+        .project-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent 25%, rgba(0,0,0,.9));
+        }
+
+        .project-info {
+            position: absolute;
+            bottom: 25px;
+            left: 25px;
+            right: 25px;
+            z-index: 2;
+        }
+
+        .project-info h4 {
+            font-weight: 800;
+        }
+
+        .project-info p {
+            color: #b3c3b8;
+        }
+
+        /* ================= IMPACT ================= */
+
+        .impact {
+            background:
+                radial-gradient(circle at center, rgba(65,255,142,.08), transparent 45%),
+                #08160f;
+        }
+
+        .impact-number {
+            font-size: 70px;
+            font-weight: 900;
+            color: #7dffaf;
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+            padding: 90px 0;
+        }
+
+        .cta-box {
+            border-radius: 35px;
+            padding: 80px 50px;
+            text-align: center;
+            background:
+                radial-gradient(circle at center, rgba(105,255,160,.16), transparent 50%),
+                linear-gradient(135deg,#0c2818,#092015);
+            border: 1px solid rgba(118,255,170,.15);
+        }
+
+        .cta-box h2 {
+            font-size: clamp(40px, 6vw, 70px);
+            font-weight: 900;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .form-control {
+            background: #0b1c13;
+            border: 1px solid rgba(255,255,255,.08);
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+        }
+
+        .form-control:focus {
+            background: #0b1c13;
+            color: white;
+            border-color: #71ffab;
+            box-shadow: 0 0 0 3px rgba(113,255,171,.08);
+        }
+
+        .form-control::placeholder {
+            color: #6e8375;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #040b07;
+            padding: 70px 0 25px;
+            border-top: 1px solid rgba(255,255,255,.05);
+        }
+
+        footer h4 {
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        footer p,
+        footer a {
+            color: #789082;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #79ffae;
+        }
+
+        .social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social a {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255,255,255,.05);
+            color: white;
+            transition: .3s;
+        }
+
+        .social a:hover {
+            background: #70ffaa;
+            color: #06120b;
+            transform: translateY(-4px);
+        }
+
+        /* ================= FLOATING PARTICLES ================= */
+
+        .particle {
+            position: fixed;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #75ffad;
+            opacity: .5;
+            pointer-events: none;
+            animation: particleFloat linear infinite;
+        }
+
+        @keyframes particleFloat {
+            from {
+                transform: translateY(110vh);
+            }
+
+            to {
+                transform: translateY(-10vh);
+            }
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width: 991px) {
+
+            .hero {
+                padding-top: 130px;
+                padding-bottom: 80px;
+            }
+
+            .earth-wrapper {
+                margin-top: 60px;
+                transform: scale(.85);
+            }
+
+            .navbar-collapse {
+                background: #07120d;
+                padding: 20px;
+                border-radius: 15px;
+                margin-top: 15px;
+            }
+        }
+
+        @media(max-width: 576px) {
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .earth-wrapper {
+                transform: scale(.65);
+                margin-left: -30px;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .cta-box {
+                padding: 55px 25px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg fixed-top">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="#">
+            Eco<span>Vanta</span>
+        </a>
+
+        <button class="navbar-toggler bg-light"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">Services</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+
+                <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                    <a href="#contact" class="btn btn-green">
+                        Start a Project
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-7 hero-content">
+
+                <div class="badge-green">
+                    <i class="fa-solid fa-leaf"></i>
+                    BUILDING A GREENER FUTURE
+                </div>
+
+                <h1>
+                    Better Planet.
+                    <span>Better Future.</span>
+                </h1>
+
+                <p>
+                    We design sustainable environmental solutions that help
+                    businesses, communities and cities reduce their impact
+                    and create a healthier planet for generations to come.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#services" class="btn btn-green">
+                        Explore Solutions
+                        <i class="fa-solid fa-arrow-right ms-2"></i>
+                    </a>
+
+                    <a href="#projects" class="btn btn-outline-green">
+                        View Our Impact
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-5">
+
+                <div class="earth-wrapper">
+
+                    <div class="earth-ring"></div>
+                    <div class="earth-ring2"></div>
+
+                    <div class="earth"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<div class="stats">
+
+    <div class="container">
+
+        <div class="row g-3">
+
+            <div class="col-md-3 col-6">
+                <div class="stat-box">
+
+                    <h2 class="counter" data-target="125">0</h2>
+                    <p>Projects Completed</p>
+
+                </div>
+            </div>
+
+            <div class="col-md-3 col-6">
+                <div class="stat-box">
+
+                    <h2><span class="counter" data-target="85">0</span>K+</h2>
+                    <p>Trees Protected</p>
+
+                </div>
+            </div>
+
+            <div class="col-md-3 col-6">
+                <div class="stat-box">
+
+                    <h2><span class="counter" data-target="42">0</span>M</h2>
+                    <p>Liters Water Saved</p>
+
+                </div>
+            </div>
+
+            <div class="col-md-3 col-6">
+                <div class="stat-box">
+
+                    <h2><span class="counter" data-target="96">0</span>%</h2>
+                    <p>Client Satisfaction</p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services">
+
+    <div class="container">
+
+        <span class="section-label">Our Solutions</span>
+
+        <h2 class="section-title">
+            Environmental solutions<br>
+            built for impact.
+        </h2>
+
+        <p class="section-description">
+            From renewable energy to waste management, we help organizations
+            move towards cleaner and more sustainable operations.
+        </p>
+
+        <div class="row g-4 mt-5">
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-solar-panel"></i>
+                    </div>
+
+                    <h4>Renewable Energy</h4>
+
+                    <p>
+                        Smart solar and renewable energy strategies designed
+                        to reduce emissions and long-term energy costs.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-recycle"></i>
+                    </div>
+
+                    <h4>Waste Management</h4>
+
+                    <p>
+                        Sustainable recycling and waste reduction programs
+                        that turn environmental challenges into opportunities.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+
+                    <h4>Water Conservation</h4>
+
+                    <p>
+                        Intelligent water management solutions helping
+                        organizations conserve valuable natural resources.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-tree"></i>
+                    </div>
+
+                    <h4>Forest Protection</h4>
+
+                    <p>
+                        Reforestation and ecosystem protection initiatives
+                        designed to restore biodiversity.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-wind"></i>
+                    </div>
+
+                    <h4>Air Quality</h4>
+
+                    <p>
+                        Monitoring and improvement strategies for healthier
+                        indoor and outdoor environments.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+                    <h4>Sustainability Consulting</h4>
+
+                    <p>
+                        Data-driven environmental strategies helping
+                        businesses build sustainable growth.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+
+                <div class="about-visual">
+
+                    <div class="eco-card">
+
+                        <div class="d-flex justify-content-between">
+
+                            <span>
+                                Global Sustainability Score
+                            </span>
+
+                            <strong class="text-success">
+                                92%
+                            </strong>
+
+                        </div>
+
+                        <div class="progress">
+
+                            <div class="progress-bar"
+                                 style="width:92%">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-6">
+
+                <span class="section-label">
+                    Why EcoVanta
+                </span>
+
+                <h2 class="section-title">
+                    Sustainability isn't
+                    a trend. It's our future.
+                </h2>
+
+                <p class="section-description">
+                    EcoVanta brings technology, environmental science and
+                    practical business strategies together to help
+                    organizations build a cleaner and more resilient future.
+                </p>
+
+                <div class="mt-4">
+
+                    <div class="d-flex gap-3 mb-4">
+
+                        <div class="service-icon flex-shrink-0">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+
+                        <div>
+                            <h5>Science Driven</h5>
+
+                            <p class="text-secondary">
+                                Solutions backed by environmental data,
+                                research and measurable outcomes.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="d-flex gap-3">
+
+                        <div class="service-icon flex-shrink-0">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+
+                        <div>
+                            <h5>Future Focused</h5>
+
+                            <p class="text-secondary">
+                                We create strategies designed to deliver
+                                long-term environmental and business value.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <span class="section-label">
+            Our Impact
+        </span>
+
+        <h2 class="section-title">
+            Projects changing<br>
+            the world.
+        </h2>
+
+        <div class="row g-4 mt-4">
+
+            <div class="col-lg-4">
+
+                <div class="project-card"
+                     style="background-image:url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1000&q=80')">
+
+                    <div class="project-info">
+
+                        <small class="text-success">
+                            RENEWABLE ENERGY
+                        </small>
+
+                        <h4>Green Energy Campus</h4>
+
+                        <p>
+                            2.4 MW solar transformation project.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-4">
+
+                <div class="project-card"
+                     style="background-image:url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=80')">
+
+                    <div class="project-info">
+
+                        <small class="text-success">
+                            REFORESTATION
+                        </small>
+
+                        <h4>Forest Revival</h4>
+
+                        <p>
+                            Restoring native ecosystems and biodiversity.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-4">
+
+                <div class="project-card"
+                     style="background-image:url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1000&q=80')">
+
+                    <div class="project-info">
+
+                        <small class="text-success">
+                            CLEAN TECHNOLOGY
+                        </small>
+
+                        <h4>Smart Solar Network</h4>
+
+                        <p>
+                            Intelligent clean energy infrastructure.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= IMPACT ================= -->
+
+<section class="impact">
+
+    <div class="container text-center">
+
+        <span class="section-label">
+            Our Numbers
+        </span>
+
+        <h2 class="section-title">
+            Small actions.<br>
+            Massive impact.
+        </h2>
+
+        <div class="row mt-5">
+
+            <div class="col-md-4">
+
+                <div class="impact-number">
+                    18K+
+                </div>
+
+                <p class="text-secondary">
+                    Tons CO₂ Reduced
+                </p>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="impact-number">
+                    2.8M
+                </div>
+
+                <p class="text-secondary">
+                    kWh Clean Energy
+                </p>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="impact-number">
+                    320K+
+                </div>
+
+                <p class="text-secondary">
+                    People Impacted
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <span class="section-label">
+                Start Your Journey
+            </span>
+
+            <h2 class="mt-3">
+                Ready to make<br>
+                an impact?
+            </h2>
+
+            <p class="text-secondary mt-3">
+                Let's build a cleaner, greener and more sustainable future
+                together.
+            </p>
+
+            <a href="#contact"
+               class="btn btn-green mt-4">
+
+                Talk to Our Experts
+                <i class="fa-solid fa-arrow-right ms-2"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="row g-5">
+
+            <div class="col-lg-5">
+
+                <span class="section-label">
+                    Contact
+                </span>
+
+                <h2 class="section-title">
+                    Let's create
+                    something greener.
+                </h2>
+
+                <p class="section-description">
+                    Tell us about your environmental challenge and our team
+                    will help you find a practical solution.
+                </p>
+
+                <div class="mt-4">
+
+                    <p>
+                        <i class="fa-solid fa-envelope text-success me-2"></i>
+                        hello@ecovanta.com
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-phone text-success me-2"></i>
+                        +92 300 1234567
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-location-dot text-success me-2"></i>
+                        Lahore, Pakistan
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-7">
+
+                <form id="contactForm">
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="Your Name"
+                                   required>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <input type="email"
+                                   class="form-control"
+                                   placeholder="Email Address"
+                                   required>
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="Company">
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <select class="form-control">
+
+                                <option>Select Service</option>
+                                <option>Renewable Energy</option>
+                                <option>Waste Management</option>
+                                <option>Water Conservation</option>
+                                <option>Forest Protection</option>
+                                <option>Sustainability Consulting</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <textarea class="form-control"
+                                      rows="6"
+                                      placeholder="Tell us about your project..."
+                                      required></textarea>
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <button type="submit"
+                                    class="btn btn-green">
+
+                                Send Message
+                                <i class="fa-solid fa-paper-plane ms-2"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="row g-5">
+
+            <div class="col-lg-5">
+
+                <a class="navbar-brand" href="#">
+                    Eco<span>Vanta</span>
+                </a>
+
+                <p class="mt-3">
+                    Environmental innovation for a healthier planet,
+                    stronger communities and a sustainable future.
+                </p>
+
+                <div class="social mt-4">
+
+                    <a href="#">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-6 col-lg-2">
+
+                <h4>Company</h4>
+
+                <p><a href="#about">About</a></p>
+                <p><a href="#projects">Projects</a></p>
+                <p><a href="#contact">Contact</a></p>
+
+            </div>
+
+
+            <div class="col-6 col-lg-2">
+
+                <h4>Solutions</h4>
+
+                <p><a href="#services">Renewable Energy</a></p>
+                <p><a href="#services">Waste Management</a></p>
+                <p><a href="#services">Water</a></p>
+
+            </div>
+
+
+            <div class="col-lg-3">
+
+                <h4>Newsletter</h4>
+
+                <p>
+                    Get environmental insights directly in your inbox.
+                </p>
+
+                <div class="input-group">
+
+                    <input type="email"
+                           class="form-control"
+                           placeholder="Email">
+
+                    <button class="btn btn-green">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr class="border-secondary mt-5">
+
+        <div class="text-center text-secondary">
+
+            © 2026 EcoVanta. All Rights Reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- jQuery -->
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- Bootstrap -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+
+$(document).ready(function(){
+
+    /* ================= NAVBAR ================= */
+
+    $(window).scroll(function(){
+
+        if($(this).scrollTop() > 50){
+
+            $('.navbar').addClass('scrolled');
+
+        } else {
+
+            $('.navbar').removeClass('scrolled');
+
+        }
+
+    });
+
+
+    /* ================= COUNTERS ================= */
+
+    $('.counter').each(function(){
+
+        let $this = $(this);
+
+        let target = $this.data('target');
+
+        $({countNum: 0}).animate(
+
+            {countNum: target},
+
+            {
+
+                duration: 2500,
+
+                easing: 'swing',
+
+                step: function(){
+
+                    $this.text(Math.floor(this.countNum));
+
+                },
+
+                complete: function(){
+
+                    $this.text(this.countNum);
+
+                }
+
+            }
+
+        );
+
+    });
+
+
+    /* ================= CONTACT FORM ================= */
+
+    $('#contactForm').submit(function(e){
+
+        e.preventDefault();
+
+        let button = $(this).find('button');
+
+        button.html(
+            '<i class="fa-solid fa-check me-2"></i> Message Sent!'
+        );
+
+        button.css({
+            'background':'#4cff93'
+        });
+
+        setTimeout(function(){
+
+            button.html(
+                'Send Message <i class="fa-solid fa-paper-plane ms-2"></i>'
+            );
+
+        },3000);
+
+    });
+
+
+    /* ================= SMOOTH NAV ================= */
+
+    $('a[href^="#"]').on('click', function(e){
+
+        let target = $(this.getAttribute('href'));
+
+        if(target.length){
+
+            e.preventDefault();
+
+            $('html, body').animate({
+
+                scrollTop: target.offset().top - 70
+
+            },800);
+
+        }
+
+    });
+
+
+    /* ================= PARTICLES ================= */
+
+    for(let i = 0; i < 35; i++){
+
+        let particle = $('<div class="particle"></div>');
+
+        particle.css({
+
+            left: Math.random() * 100 + '%',
+
+            animationDuration:
+                (Math.random() * 15 + 8) + 's',
+
+            animationDelay:
+                (Math.random() * 10) + 's',
+
+            opacity:
+                Math.random() * .5 + .1
+
+        });
+
+        $('body').append(particle);
+
+    }
+
+
+    /* ================= REVEAL ANIMATION ================= */
+
+    function reveal(){
+
+        $('.service-card, .project-card, .stat-box').each(function(){
+
+            let top = $(this).offset().top;
+
+            let scroll = $(window).scrollTop();
+
+            let windowHeight = $(window).height();
+
+            if(top < scroll + windowHeight - 80){
+
+                $(this).css({
+
+                    'opacity':'1',
+
+                    'transform':'translateY(0)'
+
+                });
+
+            }
+
+        });
+
+    }
+
+
+    $('.service-card, .project-card, .stat-box').css({
+
+        'opacity':'0',
+
+        'transform':'translateY(35px)',
+
+        'transition':'all .8s ease'
+
+    });
+
+
+    $(window).on('scroll', reveal);
+
+    reveal();
+
+});
+
+</script>
+
+</body>
+</html>
